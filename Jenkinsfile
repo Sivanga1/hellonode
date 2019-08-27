@@ -1,4 +1,11 @@
 node {
+    
+    docker
+    {
+        image 'maven:3-alpine'
+        args '-u root -p 8084:8084 -v /var/run/docker.sock:/var/run/docker.sock'
+    }
+    
     def app
 
     stage('Clone repository') {
